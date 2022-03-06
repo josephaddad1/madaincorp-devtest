@@ -16,8 +16,6 @@ const winingCombinations = [
     [2, 4, 6]
 ]
 
-let individualTurn = true;
-
 const add_sign = function (event) {
     if (this.textContent !== '') {
         return
@@ -56,26 +54,18 @@ const pick_ai_block = function () {
             if (blocks[winingCombination[0]].textContent === blocks[winingCombination[1]].textContent
                 && blocks[winingCombination[2]].textContent === '') {
                 blocks[winingCombination[2]].textContent = aiSign;
-                console.log("HERE 1");
-                individualTurn = true;
                 return
             } else if (blocks[winingCombination[1]].textContent === blocks[winingCombination[2]].textContent
                 && blocks[winingCombination[0]].textContent === '') {
                 blocks[winingCombination[0]].textContent = aiSign;
-                console.log("HERE 2");
-                individualTurn = true;
                 return
             }
             else if   (blocks[winingCombination[0]].textContent === blocks[winingCombination[2]].textContent
                 && blocks[winingCombination[1]].textContent === '') {
                 blocks[winingCombination[1]].textContent = aiSign;
-                console.log("HERE 3");
-                individualTurn = true;
                 return
             } else if (blocks[winingCombination[j]].textContent === '') {
                 blocks[winingCombination[j]].textContent = aiSign;
-                console.log("HERE 4");
-                individualTurn = true;
                 return;
             }
         }
